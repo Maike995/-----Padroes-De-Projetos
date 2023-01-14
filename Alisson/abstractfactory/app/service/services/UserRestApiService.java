@@ -1,0 +1,23 @@
+package br.com.padroes.abstractfactory.app.service.services;
+
+public class UserRestApiService implements UserService {
+
+	private UserRestApiService(){
+
+	}
+
+	public static UserRestApiService getInstance(){
+		return new UserRestApiService();
+	}
+	@Override
+	public void save(String name) {
+		System.out.println("Saving " + name + " through Rest's interface");
+	}
+
+	@Override
+	public boolean delete(Integer id) {
+		System.out.println("Removing User #" + id + " through Rest's interface");
+		return true;
+	}
+
+}
